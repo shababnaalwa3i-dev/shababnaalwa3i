@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="الموقع الرسمي لشبابنا الواعد - شبابنا الواعي. منصة وطنية لتأهيل وتمكين الكوادر الشبابية والرياضية في مصر.">
+  <title>شبابنا الواعد | منصة وطنية لصناعة القادة</title>
+  <link rel="icon" type="image/png" href="./images/logo.png">
+  <meta name="keywords" content="شبابنا الواعد, شبابنا الواعي, تأهيل الشباب, تمكين الكوادر, القيادات الشبابية, الرياضة في مصر, مبادرة شبابية, تطوير المهارات, صناعة القادة">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://shababnaalwa3i-dev.github.io/shababnaalwa3i/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shababnaalwa3i-dev.github.io/shababnaalwa3i/">
+  <meta property="og:title" content="شبابنا الواعد | منصة وطنية لصناعة القادة">
+  <meta property="og:description" content="الموقع الرسمي لشبابنا الواعد - شبابنا الواعي. منصة وطنية لتأهيل وتمكين الكوادر الشبابية والرياضية في مصر.">
+  <meta property="og:image" content="https://shababnaalwa3i-dev.github.io/shababnaalwa3i/images/youth_sports_logo_1782683669277.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="شبابنا الواعد | منصة وطنية لصناعة القادة">
+  <meta name="twitter:description" content="الموقع الرسمي لشبابنا الواعد - شبابنا الواعي. منصة وطنية لتأهيل وتمكين الكوادر الشبابية والرياضية في مصر.">
+  <meta name="twitter:image" content="https://shababnaalwa3i-dev.github.io/shababnaalwa3i/images/youth_sports_logo_1782683669277.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient noise overlay -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- Header Bar -->
+  <header class="site-header">
+    <div class="container header-inner">
+      
+      <!-- Brand with high focus Logo -->
+      <a href="#home" class="brand" onclick="scrollToSection('home'); return false;">
+        <div class="brand-logo-wrap">
+          <img src="images/youth_sports_logo_1782683669277.png" alt="Logo mini">
+        </div>
+        <div class="brand-copy">
+          <strong>شبابنا الواعد</strong>
+          <small>كيان وطني رسمي لتأهيل القادة والرياضيين</small>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="site-nav" id="main-nav">
+        <button class="nav-link is-active" onclick="scrollToSection('home')" data-nav-t="home">الرئيسية</button>
+        <button class="nav-link" onclick="scrollToSection('news')" data-nav-t="news">أحدث المبادرات</button>
+        <button class="nav-link" onclick="scrollToSection('about')" data-nav-t="about">عن الائتلاف</button>
+        <button class="nav-link" onclick="scrollToSection('vision')" data-nav-t="vision">رؤيتنا وبرنامجنا</button>
+        <button class="nav-link" onclick="scrollToSection('bylaws')" data-nav-t="bylaws">اللائحة التأسيسية</button>
+        <button class="nav-link" onclick="scrollToSection('leadership')" data-nav-t="leadership">الهيكل القيادي</button>
+        <button class="nav-link" onclick="scrollToSection('offices')" data-nav-t="offices">مقراتنا</button>
+        <button class="nav-link hidden" onclick="scrollToSection('join')" data-nav-t="join">انضم لنا</button>
+        <button class="nav-link" onclick="scrollToSection('contact')" data-nav-t="contact">تواصل معنا</button>
+      </nav>
+
+      <!-- Action Area -->
+      <div class="header-actions hidden">
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+          <button class="lang-btn is-active" data-lang="ar" onclick="switchLang('ar')">العربية</button>
+          <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Layout Elements -->
+  <main>
+
+    <!-- Home/Hero Section -->
+    <section class="section hero" id="home">
+      <!-- Background elements -->
+      <div class="hero-bg" aria-hidden="true">
+        <div class="grid-lines"></div>
+      </div>
+
+      <div class="container hero-grid">
+        
+        <!-- Left copy block -->
+        <div class="hero-content">
+          <span class="eyebrow" id="hero-eyebrow">شبابنا الواعي • كيان الشباب والرياضة</span>
+          <h1 id="hero-title">
+            نقود طاقات الشباب وصناعة قادة الغد الرياضي والوطني
+          </h1>
+          <p class="hero-text" id="hero-text">
+            منصة وطنية رائدة ومؤسسة شبابية تجمع بين الانضباط والالتزام والريادة لتأهيل وتمكين الكوادر الشبابية في كافة المحافظات المصرية. نعمل بروح واحدة لبناء جيل قوي ومثقف رياضيًا ووطنيًا.
+          </p>
+          
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="hero-btn-primary" onclick="scrollToSection('leadership')">استكشف الكوادر القيادية</button>
+            <button class="btn btn-secondary" id="hero-btn-secondary" onclick="scrollToSection('about')">من نحن وماذا نقدم؟</button>
+          </div>
+
+          <ul class="hero-points" id="hero-points-list">
+            <!-- Populated via script.js -->
+          </ul>
+        </div>
+
+        <!-- Right Graphic (Gold circular emblem highlighting the logo) -->
+        <div class="hero-visual">
+          <div class="floating-chip floating-chip-one">
+            <span id="chip-one-text">مبادرة طاقة وطن للتميز</span>
+          </div>
+          <div class="floating-chip floating-chip-two">
+            <span id="chip-two-text">إعداد المتحدث الرسمي للشباب</span>
+          </div>
+
+          <div class="glass-panel hero-panel">
+            <div class="hero-panel-top">
+              <span class="status-dot"></span>
+              <span id="panel-badge">مستوى جاهزية مؤسسية 100%</span>
+            </div>
+
+            <!-- Focused Emblem containing the logo -->
+            <div class="hero-emblem">
+              <div class="emblem-circle">
+                <img src="images/youth_sports_logo_1782683669277.png" alt="Youth & Sports Coalition Logo">
+              </div>
+            </div>
+
+            <div class="hero-panel-content">
+              <h3 id="panel-title">هيئة شبابية وطنية مستدامة والأكثر تأثيرًا</h3>
+              <p id="panel-text">نسعى دائمًا إلى تحقيق التفوق والريادة من خلال تطوير الأدوات والمنهجيات، ودعم المبادرات الرياضية والتنموية التي تترك أثرًا ملموسًا في نسيج المجتمع المصري.</p>
+            </div>
+
+            <!-- Dynamic stats parameters in hero panel -->
+            <div id="panel-mini-metrics" class="mini-metrics hidden">
+              <!-- Rendered via script.js -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Stats/Facts Counter Section -->
+    <section class="section hidden" id="stats" style="background-color: #060e19;">
+      <div class="container">
+        <div class="section-head text-center mx-auto">
+          <span class="section-kicker" id="stats-kicker">أرقامنا وإنجازاتنا الميدانية</span>
+          <h2 class="section-title" id="stats-title">حقائق تعكس حجم تمكيننا وتواجدنا الفعلي</h2>
+        </div>
+
+        <div class="stats-grid" id="stats-grid-container">
+          <!-- Populated via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- News / Activities Section -->
+    <section class="section" id="news">
+      <div class="container">
+        
+        <div class="news-slider">
+          <div class="news-slider-head">
+            <div>
+              <span class="section-kicker" id="news-kicker">أجندتنا الحية والأنشطة</span>
+              <h2 class="section-title" id="news-title">احدث المبادرات و الاجتماعات</h2>
+              <p class="section-copy" id="news-text">تابع تفاصيل مشاريعنا وبرامجنا التفاعلية التي تهدف لبناء المهارات الفردية والجماعية للشباب وتعزيز الحضور الرياضي الإيجابي.</p>
+            </div>
+            
+            <div class="news-slider-controls">
+              <button class="slider-btn" onclick="prevSlide()" aria-label="Previous Project">&rarr;</button>
+              <button class="slider-btn" onclick="nextSlide()" aria-label="Next Project">&larr;</button>
+            </div>
+          </div>
+
+          <!-- Dynamic Slides Container -->
+          <div class="news-viewport">
+            <div class="news-track" id="news-track">
+              <!-- Rendered via script.js -->
+            </div>
+          </div>
+
+          <!-- Slider indicators dots -->
+          <div style="display: flex; justify-content: center; margin-top: 24px;">
+            <div class="slider-dots" id="slider-dots-container">
+              <!-- Generated via script.js -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about" style="background-color: #060e19;">
+      <div class="container">
+        <div class="about-layout">
+          
+          <!-- Column 1: Info card -->
+          <div class="about-card">
+            <span class="section-kicker" id="about-kicker">قصة وهوية الكيان</span>
+            <h2 class="section-title" id="about-title">كيان شبابي رياضي وطني بطموح يلامس المستقبل</h2>
+            <p class="section-copy" id="about-lead">تأسس الائتلاف ليكون النواة الرسمية لتوحيد جهود الكوادر الشابة والرياضية، ودمج الهيئات التطوعية في مسار وطني منضبط يهدف لبناء جيل من القادة القادرين على العطاء والمشاركة التنموية الإيجابية.</p>
+            
+            <div class="about-quote">
+              <span class="quote-line"></span>
+              <p id="about-quote-text">إن التميز الرياضي والوعي الوطني هما الركيزتان الأساسيتان اللتان نبني عليهما مستقبل كوادرنا؛ فالرياضة انضباط والوعي قوة.</p>
+            </div>
+          </div>
+
+          <!-- Column 2: Detailed block -->
+          <div style="padding: 16px;">
+            <div style="margin-bottom: 24px;">
+              <h3 class="section-title" id="about-who-title" style="font-size: 1.6rem; color: var(--accent-gold); margin-bottom: 12px;">من نحن وما هي رسالتنا؟</h3>
+              <p class="section-copy" id="about-who-text">كيان شبابي يستثمر في طاقات الشباب ويمكّنهم بالمهارات الرقمية والقيادية لصناعة قادة الغد وطنياً ورياضياً. نحن تجمع شبابي يهدف لنشر ثقافة التعلم الذاتي وتأهيل جيل واعد يقود المستقبل تقنياً ومعرفياً. منصة شبابية مبتكرة تهدف لتمكين الجيل الصاعد بالمهارات العملية والأمن السيبراني لبناء قادة المستقبل.</p>
+            </div>
+
+            <!-- Logo display to reinforce visual identity -->
+            <div style="border-radius: var(--radius-sm); border: 1px solid var(--surface-border); overflow: hidden; background: var(--bg-soft); padding: 20px; display: flex; align-items: center; gap: 20px;">
+              <img src="images/youth_sports_logo_1782683669277.png" alt="Logo" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; border: 2px solid var(--accent-gold); background: #fff; padding: 2px;">
+              <div>
+                <h4 style="font-family: 'Cairo', sans-serif; font-weight: 800; font-size: 1.05rem; margin-bottom: 4px;">شعار الكيان المعتمد</h4>
+                <p style="color: var(--text-muted); font-size: 0.75rem; line-height: 1.5;">العلامة المائية والختم الرسمي لشبابنا الواعد - شبابنا الواعي.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision Pillars Section -->
+    <section class="section" id="vision">
+      <div class="container">
+        <div class="section-head text-center mx-auto">
+          <span class="section-kicker" id="vision-kicker">منهج عملنا ورؤيتنا الاستراتيجية</span>
+          <h2 class="section-title" id="vision-title">خارطة طريق واضحة لصناعة الأثر والتغيير الإيجابي</h2>
+          <p class="section-copy" id="vision-text">نعمل من خلال أربعة محاور استراتيجية متكاملة تضمن تلبية احتياجات الشباب ومواكبة المتغيرات والتحديات المعاصرة.</p>
+        </div>
+
+        <div class="vision-grid" id="vision-grid-container">
+          <!-- Populated via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Bylaws Constitution Section -->
+    <section class="section" id="bylaws" style="background-color: #060e19;">
+      <div class="container">
+        <div class="section-head text-center mx-auto">
+          <span class="section-kicker" id="bylaws-kicker">مبادئ العمل والشفافية</span>
+          <h2 class="section-title" id="bylaws-title">اللائحة التأسيسية والقواعد المنظمة للائتلاف</h2>
+          <p class="section-copy" id="bylaws-text">تخضع كافة أعمال ومستويات الائتلاف للائحة تنظيمية واضحة تضمن الشفافية والمساءلة وتحدد الحقوق والواجبات التنظيمية لكافة الأعضاء.</p>
+        </div>
+
+        <div class="accordion" id="bylaws-accordion">
+          <!-- Populated via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Board Section -->
+    <section class="section" id="leadership">
+      <div class="container">
+        <div class="section-head text-center mx-auto">
+          <span class="section-kicker" id="leadership-kicker">الهيكل الإداري والقيادي</span>
+          <h2 class="section-title" id="leadership-title">قادة مخلصون يرسمون الطريق نحو المستقبل</h2>
+          <p class="section-copy" id="leadership-text">كفاءات وطنية وقامات شبابية مشهود لها بالإنجاز، يعملون معًا بروح الفريق الواحد لصياغة مستقبل الكيان وتفعيل مخرجاته التنموية والرياضية.</p>
+        </div>
+
+        <div class="leadership-grid" id="leadership-grid-container">
+          <!-- Populated via script.js -->
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Our Offices Section -->
+    <section class="section" id="offices" style="background-color: #060e19;">
+      <div class="container">
+        <div class="section-head text-center mx-auto">
+          <span class="section-kicker" id="offices-kicker">انتشارنا داخل المحافظات</span>
+          <h2 class="section-title" id="offices-title">مقراتنا ونقاط التواصل الرسمية</h2>
+          <p class="section-copy" id="offices-text">نستقبل استفسارات الشباب والرياضيين من خلال مقرات ونقاط تنسيق تعمل على خدمة الأعضاء وتنظيم الأنشطة المحلية في المحافظات.</p>
+        </div>
+
+        <div class="offices-grid" id="offices-grid-container">
+          <!-- Populated via script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section class="section hidden" id="join">
+      <div class="container">
+        <div class="join-layout">
+          <div class="glass-panel join-info">
+            <span class="section-kicker" id="join-kicker">بوابة العضوية والتطوع</span>
+            <h2 class="section-title" id="join-title">سجل بياناتك للانضمام إلى الائتلاف</h2>
+            <p class="section-copy" id="join-text">املأ بياناتك الأساسية، وسيتم تجهيز رسالة بريد إلكتروني لإرسال طلبك إلى فريق العضوية لمراجعته والتواصل معك في أقرب وقت.</p>
+
+            <div class="join-benefits" id="join-benefits-list">
+              <!-- Populated via script.js -->
+            </div>
+          </div>
+
+          <form class="join-form glass-panel" id="join-form" action="https://api.web3forms.com/submit" method="POST">
+  <!-- مفتاح الوصول الخاص بك لخدمة Web3Forms -->
+  <input type="hidden" name="access_key" value="f0259fa7-0f84-4c54-b08a-aa683129fd39">
+
+  <!-- حماية أمنية (Honeypot): حقل مخفي تماماً لمنع البوتات والسبام تلقائياً -->
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+  <!-- تخصيص عنوان الرسالة التي ستصلك في الإيميل لتكون منظمة -->
+  <input type="hidden" name="subject" value="طلب انضمام جديد - بوابة العضوية والتطوع">
+
+  <div class="form-grid">
+    <label class="form-field">
+      <span id="join-label-name">الاسم بالكامل</span>
+      <input type="text" name="name" id="join-name" required placeholder="اكتب اسمك بالكامل">
+    </label>
+
+    <label class="form-field">
+      <span id="join-label-phone">رقم الهاتف</span>
+      <input type="tel" name="phone" id="join-phone" required placeholder="مثال: 01000000000">
+    </label>
+
+    <label class="form-field">
+      <span id="join-label-email">البريد الإلكتروني</span>
+      <input type="email" name="email" id="join-email" required placeholder="name@example.com">
+    </label>
+
+    <label class="form-field">
+      <span id="join-label-age">السن</span>
+      <input type="number" name="age" id="join-age" min="12" max="80" required placeholder="اكتب السن">
+    </label>
+
+    <label class="form-field">
+      <span id="join-label-governorate">المحافظة</span>
+      <select name="governorate" id="join-governorate" required>
+        <option value="">اختر المحافظة</option>
+      </select>
+    </label>
+
+    <label class="form-field">
+      <span id="join-label-interest">مجال الاهتمام</span>
+      <select name="interest" id="join-interest" required>
+        <option value="">اختر المجال</option>
+      </select>
+    </label>
+  </div>
+
+  <label class="form-field form-field-full">
+    <span id="join-label-message">نبذة مختصرة عنك</span>
+    <textarea name="message" id="join-message" rows="5" placeholder="اكتب خبراتك أو سبب رغبتك في الانضمام"></textarea>
+  </label>
+
+  <div class="form-consent">
+    <input type="checkbox" id="join-consent" required>
+    <label for="join-consent" id="join-consent-text">أوافق على إرسال بياناتي لفريق العضوية والتواصل معي بخصوص الطلب.</label>
+  </div>
+
+  <button type="submit" class="btn btn-primary" id="join-submit">إرسال طلب الانضمام</button>
+  
+  <!-- تم تعديل الملاحظة بما يتناسب مع نظام العمل الجديد عبر السيرفر بدون ريفريش للبريد -->
+  <p class="form-note" id="join-note">عند الضغط على إرسال، سيتم تشفير البيانات وإرسالها مباشرة لفريق العضوية.</p>
+  <p class="form-status" id="join-status" aria-live="polite"></p>
+</form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" id="contact" style="background-color: #060e19;">
+      <div class="container">
+        <div class="glass-panel cta-shell" style="border: 2px solid var(--accent-gold); background: linear-gradient(135deg, rgba(13,27,42,0.9) 0%, rgba(10,25,47,0.95) 100%);">
+          <div>
+            <span class="section-kicker" id="cta-kicker">كن جزءًا من التأثير والريادة</span>
+            <h2 class="section-title" id="cta-title" style="margin-bottom: 14px;">هل أنت مستعد لتكون أحد قادة المستقبل وتصنع معنا الفارق؟</h2>
+            <p class="section-copy" id="cta-text">باب الانضمام والمشاركة مفتوح لكافة الطاقات الشبابية والرياضية الطموحة التي تسعى للتميز وتقديم نموذج حقيقي ومثالي للعطاء والخدمة الوطنية.</p>
+          </div>
+
+          <div class="cta-actions">
+            <button class="btn btn-primary" id="cta-btn-primary" onclick="scrollToSection('join')">انضم إلينا وتواصل الآن</button>
+            <button class="btn btn-secondary" id="cta-btn-secondary" onclick="scrollToSection('home')">الرجوع لأعلى الصفحة</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        
+        <!-- Brand Copy -->
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--accent-gold); overflow: hidden; background: #fff; padding: 1.5px;">
+              <img src="images/youth_sports_logo_1782683669277.png" alt="Logo mini" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            </div>
+            <strong id="footer-brand" style="margin-bottom: 0;">شبابنا الواعد</strong>
+          </div>
+          <p id="footer-text">منصة وطنية شبابية كبرى تسعى لبناء جيل قوي واعي ومؤهل رياضياً ووطنياً للمساهمة في بناء الجمهورية الجديدة.</p>
+        </div>
+
+        <!-- Links Column -->
+        <div>
+          <strong id="footer-quick-title">روابط سريعة</strong>
+          <div class="footer-links">
+            <a href="#about" onclick="scrollToSection('about'); return false;" data-footer-link="about">عن الائتلاف</a>
+            <a href="#leadership" onclick="scrollToSection('leadership'); return false;" data-footer-link="leadership">الهيكل القيادي</a>
+            <a href="#offices" onclick="scrollToSection('offices'); return false;" data-footer-link="offices">مقراتنا</a>
+            <!-- <a href="#join" onclick="scrollToSection('join'); return false;" data-footer-link="join">انضم لنا</a> -->
+            <a href="#news" onclick="scrollToSection('news'); return false;" data-footer-link="news">أحدث المبادرات</a>
+          </div>
+        </div>
+
+        <!-- Social Column -->
+        <div>
+          <strong id="footer-socials-title">منصات التواصل</strong>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/profile.php?id=61582921731959" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
+            <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">Y</a>
+            <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter / X">𝕏</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom legal row -->
+      <div class="footer-bottom">
+        <p id="footer-copy">© 2026 شبابنا الواعد. جميع الحقوق محفوظة.</p>
+        <div style="display: flex; align-items: center; gap: 6px; color: var(--text-muted); font-size: 0.75rem;">
+          <span style="color: var(--accent-gold);">✦</span>
+          <span id="footer-status-text">كيان شبابي رسمي ووطني معتمد</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Profile Modal Dialog Popup -->
+  <div class="profile-modal" id="profile-modal">
+    <div class="profile-backdrop" id="profile-backdrop"></div>
+    <div class="profile-dialog glass-panel">
+      
+      <!-- Close Trigger -->
+      <button class="profile-close" onclick="closeProfile()" aria-label="Close Profile Modal">&times;</button>
+
+      <div class="profile-grid">
+        <!-- Visual Column -->
+        <div class="profile-media">
+          <img src="" alt="" id="modal-image">
+        </div>
+
+        <!-- Detailed Content Column -->
+        <div class="profile-content">
+          <span class="profile-label" id="modal-label">الملف الشخصي للقيادي</span>
+          <h3 id="modal-name"><!-- Loaded via script --></h3>
+          <p class="profile-role" id="modal-role"><!-- Loaded via script --></p>
+          <p class="profile-bio" id="modal-bio"><!-- Loaded via script --></p>
+
+          <!-- Core Achievements -->
+          <div class="profile-block">
+            <h4 id="modal-achievements-title">أبرز الإنجازات والمحطات المهنية</h4>
+            <ul id="modal-achievements-list">
+              <!-- Loaded via script -->
+            </ul>
+          </div>
+
+          <!-- Social networks -->
+          <div class="profile-block">
+            <h4 id="modal-socials-title">روابط التواصل الرسمي والمجتمعي</h4>
+            <div class="profile-socials" id="modal-socials-list">
+              <!-- Loaded via script -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Sourcing dynamic controller script -->
+  <script src="script.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a14e70dd2e38eda4',t:'MTc4MzAwMzU5Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="الهيكل الإداري والقيادي - شبابنا الواعد. قادة مخلصون يرسمون الطريق نحو المستقبل.">
+  <title>الهيكل القيادي | شبابنا الواعد</title>
+  
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Leadership Page Specific Styles */
+    .leadership-page-header {
+      background: linear-gradient(135deg, #0d1b2a 0%, #051729 100%);
+      padding: 60px 20px;
+      text-align: center;
+      border-bottom: 2px solid var(--accent-gold);
+    }
+
+    .leadership-member-card {
+      background: var(--surface-card);
+      border: 1px solid var(--surface-border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .leadership-member-card:hover {
+      border-color: var(--accent-gold);
+      box-shadow: 0 12px 40px rgba(212, 175, 55, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .member-image {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+    }
+
+    .member-info {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .member-role {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .member-name {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    .member-summary {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .member-bio {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      background: rgba(212, 175, 55, 0.05);
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      border-right: 2px solid var(--accent-gold);
+    }
+
+    .achievements-section {
+      margin-bottom: 20px;
+    }
+
+    .achievements-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .achievements-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .achievements-list li {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      padding-bottom: 6px;
+      padding-right: 16px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+
+    .achievements-list li:before {
+      content: "✓";
+      position: absolute;
+      right: 0;
+      color: var(--accent-gold);
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .socials-section {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--surface-border);
+    }
+
+    .socials-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      letter-spacing: 0.1em;
+    }
+
+    .socials-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--accent-gold);
+      border-radius: 50%;
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-size: 0.7rem;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+
+    .social-link:hover {
+      background: var(--accent-gold);
+      color: var(--bg-primary);
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--bg-primary);
+      border-radius: var(--radius-lg);
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      border: 1px solid var(--surface-border);
+    }
+
+    .modal-header {
+      padding: 24px;
+      border-bottom: 1px solid var(--surface-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .modal-close:hover {
+      color: var(--text-primary);
+    }
+
+    .modal-body {
+      padding: 24px;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      font-family: 'Cairo', sans-serif;
+      line-height: 1.3;
+    }
+
+    .section-copy {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    @media (max-width: 768px) {
+      .leadership-page-header {
+        padding: 40px 20px;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .leadership-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .member-image {
+        height: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient noise overlay -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- Header Bar -->
+  <header class="site-header">
+    <div class="container header-inner">
+      
+      <!-- Brand -->
+      <a href="index.html" class="brand">
+        <div class="brand-logo-wrap">
+          <img src="images/youth_sports_logo_1782683669277.jpg" alt="Logo mini">
+        </div>
+        <div class="brand-copy">
+          <strong>شبابنا الواعد</strong>
+          <small>الهيكل القيادي والكوادر الإدارية</small>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">← العودة للموقع الرئيسي</a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Leadership Page Header -->
+    <section class="leadership-page-header">
+      <div class="container" style="max-width: 800px;">
+        <span class="section-kicker">الهيكل الإداري والقيادي</span>
+        <h1 class="section-title">قادة مخلصون يرسمون الطريق نحو المستقبل</h1>
+        <p class="section-copy">
+          كفاءات وطنية وقامات شبابية مشهود لها بالإنجاز، يعملون معًا بروح الفريق الواحد لصياغة مستقبل الكيان وتفعيل مخرجاته التنموية والرياضية.
+        </p>
+      </div>
+    </section>
+
+    <!-- Leadership Grid -->
+    <section class="section">
+      <div class="container">
+        <div class="leadership-grid" id="leadership-grid">
+          <!-- Cards will be populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--accent-gold); overflow: hidden; background: #fff; padding: 1.5px;">
+              <img src="images/youth_sports_logo_1782683669277.jpg" alt="Logo mini" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            </div>
+            <strong style="margin-bottom: 0;">شبابنا الواعد</strong>
+          </div>
+          <p>منصة وطنية شبابية كبرى تسعى لبناء جيل قوي واعي ومؤهل رياضياً ووطنياً.</p>
+        </div>
+
+        <div>
+          <strong>روابط سريعة</strong>
+          <div class="footer-links">
+            <a href="index.html#about">عن الائتلاف</a>
+            <a href="leadership.html">الهيكل القيادي</a>
+            <a href="index.html#offices">مقراتنا</a>
+          </div>
+        </div>
+
+        <div>
+          <strong>منصات التواصل</strong>
+          <div class="footer-socials">
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
+            <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">Y</a>
+            <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter">𝕏</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 شبابنا الواعد. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Leadership Data Script -->
+  <script>
+    // Leadership Data (نفس البيانات من script.js)
+    const leadershipData = [
+        {
+          id: "1",
+          name: "محمد حسام علي",
+          role: "رئيس الكيان",
+          summary: "يقود الرؤية الاستراتيجية العامة للائتلاف ويشرف على تعزيز وتفعيل الحضور الوطني والمجتمعي للكيان.",
+          bio: "يمتلك أحمد خبرة تزيد عن 12 عاماً في مجال إدارة المؤسسات الرياضية وتصميم البرامج الشبابية الوطنية. شارك في إطلاق العديد من المعسكرات والبطولات المعتمدة، ويعمل بشكل وثيق مع الجهات الحكومية والخاصة لبناء جسور تواصل فاعلة تدعم تمكين طاقات الشباب المصري.",
+          achievements: [
+            "تأسيس وبناء الهيكل الإداري للائتلاف وتوسيع دائرته لتغطي كافة المحافظات الـ 27.",
+            "الإشراف العام على تنظيم أكثر من 150 مبادرة وطنية ورياضية حاشدة ومؤثرة.",
+            "الحصول على تكريمات رسمية متعددة لجهوده المتميزة في تمكين وتأهيل وتدريب الكوادر الشبابية."
+          ],
+          socials: [
+            { label: "Instgram", url: "https://www.instagram.com/alimohamedhossam/" },
+            { label: "Facebook", url: "https://www.facebook.com/mohamed.hossam.ali.2025" },
+            // { label: "X (Twitter)", url: "https://twitter.com" }
+          ],
+          image: "./images/1.png"
+        },
+        {
+          id: "2",
+          name: "مصطفي احمد الالفي",
+          role: "نائبة رئيس الائتلاف للتخطيط والتطوير",
+          summary: "تشرف على ملف التطوير الهيكلي، الجودة، وبناء الحقائب التدريبية والتمكين الأكاديمي للكوادر.",
+          bio: "مريم باحثة في مجال التنمية البشرية وحوكمة المؤسسات غير الهادفة للربح. أشرفت على تصميم وتطوير أكثر من 30 حقيبة تدريبية في مهارات القيادة، التخطيط الاستراتيجي، وحوكمة وإدارة المشاريع الشبابية والرياضية.",
+          achievements: [
+            "تصميم النظام الأساسي للتقييم والمتابعة بالائتلاف (حصاد الأثر).",
+            "عقد شراكات مع أكاديميات محلية لتوفير دورات قيادية مجانية وحصرية للأعضاء الكوادر.",
+            "إطلاق المنتدى السنوي الأول لشباب الائتلاف بنجاح كبير وتفاعل جماهيري غير مسبوق."
+          ],
+          socials: [
+            { label: "LinkedIn", url: "https://www.linkedin.com" },
+            { label: "Instagram", url: "https://www.instagram.com" }
+          ],
+          image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400"
+        },
+        {
+          id: "3",
+          name: "محمد سمير",
+          role: "عضو الهيئه الاستشاريه العليا",
+          summary: "مسؤول عن تنظيم وتخطيط وإدارة كافة الفعاليات الرياضية، الدوريات والبطولات الكبرى.",
+          bio: "ابن السويس، ومحب للعمل الخدمي والتطوعي. أؤمن بأن خدمة الوطن تبدأ من دعم شبابه؛ لذا ركزت مسيرتي التطوعية على المساهمة في مبادرات توظيف وتشغيل شباب السويس وتطوير مهاراتهم. أسعى دائماً لترك بصمة خير في مجتمعي والمشاركة في كل عمل خدمي ينهض بمحافظتنا الغالية",
+          achievements: [
+            "إطلاق وتنظيم 'دوري المحافظات الشاب' بمشاركة أكثر من 8000 لاعب كرة قدم ورياضي.",
+            "تنسيق اتفاقيات توأمة مع أندية رائدة ومراكز شباب متميزة لدعم ورعاية الموهوبين.",
+            "تأسيس أول معسكر رياضي تثقيفي مكثف ومستمر لدمج اللياقة بالتدريب القيادي والمهاري."
+          ],
+          socials: [
+            { label: "Facebook", url: "https://www.facebook.com" },
+            { label: "YouTube", url: "https://www.youtube.com" }
+          ],
+          image: "./images/3.png"
+        },
+        {
+          id: "4",
+          name: "يوسف سيد الراوي",
+          role: "نموذج للقيادة الشابة والعمل التنموي",
+          summary: "تدير وتخطط للحملات والأنشطة التطوعية والمبادرات البيئية والخدمية في مختلف المحافظات.",
+          bio: "تمتلك سلمى شغفًا لا ينضب بالعمل الميداني والخدمة العامة. قادت على مدار 8 سنوات حملات ومبادرات إنسانية وتطوعية كبرى ساهمت في تحسين جودة الحياة في القرى الأكثر احتياجاً ودعمت دمج الرياضة بالخدمة المجتمعية.",
+          achievements: [
+            "تنفيذ 'مبادرة طاقة وطن' للمحافظة على البيئة واللياقة البدنية في 12 محافظة ريفية وحضرية.",
+            "جمع وتدريب شبكة تطوعية مخلصة قوامها أكثر من 3000 متطوع ومتطوعة مستعدين للبذل والعطاء.",
+            "ابتكار نظام النقاط التفاعلي لتشجيع ومكافأة الأعضاء الأكثر نشاطًا وبذلاً في العمل المجتمعي."
+          ],
+          socials: [
+            { label: "LinkedIn", url: "https://www.linkedin.com" },
+            { label: "Instagram", url: "https://www.instagram.com" }
+          ],
+          image: "./images/4.png"
+        },
+        {
+          id: "5",
+          name: "احمد جمال علي خليل",
+          role: "مهتم بالعمل المجتمعي وتنمية الشباب",
+          summary: "يقود الهوية البصرية للكيان، الحملات الإعلامية، وصناعة المحتوى التفاعلي والتغطيات الميدانية.",
+          bio: "يوسف مخرج ومصمم وسائط رقمية بخبرة كبيرة في تغطية وصناعة محتوى المبادرات الوطنية. يشرف على تطوير الحضور الرقمي وصياغة الخطاب الإعلامي للائتلاف ليواكب التطور التكنولوجي العصري السريع.",
+          achievements: [
+            "بناء وإطلاق الموقع الإلكتروني والمنصات التفاعلية للائتلاف بهوية بصرية ذهبية موحدة وفاخرة.",
+            "إنتاج سلسلة أفلام وثائقية وتسجيلية وثقت إنجازات ومبادرات الائتلاف في أرجاء مصر كافة.",
+            "إدارة وتنظيم المركز الإعلامي لبطولات الائتلاف بمهنية وجودة فنية رفيعة المستوى تضاهي المعايير الدولية."
+          ],
+          socials: [
+            { label: "LinkedIn", url: "https://www.linkedin.com" },
+            { label: "YouTube", url: "https://www.youtube.com" }
+          ],
+          image: "./images/5.png"
+        },
+        {
+        id: "training",
+        name: "نورهان خالد رفعت",
+        role: "أمينة عام التدريب والتمكين الميداني",
+        summary: "تقود تنظيم الورش التدريبية والمحاضرات التفاعلية واللقاءات الفكرية لصناعة الوعي.",
+        bio: "نورهان حاصلة على درجة الماجستير في الإدارة والتدريب. تؤمن بأن التدريب المستمر والتثقيف الفكري هما درع الشباب لمواجهة الشائعات والتحديات المعاصرة، وبناء كاريزما وطنية رائدة ومؤثرة.",
+        achievements: [
+          "تخريج أكثر من 1200 شاب وفتاة من دورات 'المتحدث الشبابي المعتمد' بالمحافظات.",
+          "إعداد وتأهيل فريق من المحاضرين والمدربين المؤهلين للانتشار والتثقيف الميداني السريع.",
+          "ابتكار نموذج محاكاة مجالس المحافظات لتدريب الشباب على اتخاذ القرارات وحل المشكلات التنظيمية."
+        ],
+        socials: [
+          { label: "LinkedIn", url: "https://www.linkedin.com" },
+          { label: "Twitter", url: "https://twitter.com" }
+        ],
+        image: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&q=80&w=400&h=400"
+      }
+    ];
+
+    // Render Leadership Cards
+    function renderLeadershipCards() {
+      const grid = document.getElementById('leadership-grid');
+      
+      leadershipData.forEach(member => {
+        const card = document.createElement('div');
+        card.className = 'leadership-member-card';
+        
+        const socialsHTML = member.socials.map(social => 
+          `<a href="${social.url}" target="_blank" rel="noreferrer" class="social-link" title="${social.label}">${social.label.substring(0, 2)}</a>`
+        ).join('');
+
+        const achievementsHTML = member.achievements.map(achievement => 
+          `<li>${achievement}</li>`
+        ).join('');
+
+        card.innerHTML = `
+          <img src="${member.image}" alt="${member.name}" class="member-image">
+          <div class="member-info">
+            <div class="member-role">${member.role}</div>
+            <h3 class="member-name">${member.name}</h3>
+            <p class="member-summary">${member.summary}</p>
+            
+            <div class="member-bio">${member.bio}</div>
+            
+            <div class="achievements-section">
+              <div class="achievements-title">🏆 أبرز الإنجازات</div>
+              <ul class="achievements-list">
+                ${achievementsHTML}
+              </ul>
+            </div>
+            
+            <div class="socials-section">
+              <div class="socials-title">التواصل</div>
+              <div class="socials-links">
+                ${socialsHTML}
+              </div>
+            </div>
+          </div>
+        `;
+        
+        grid.appendChild(card);
+      });
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', renderLeadershipCards);
+  </script>
+
+</body>
+</html>
