@@ -7,6 +7,7 @@ const appData = {
     },
     nav: {
       home: "الرئيسية",
+      charter: "ميثاق المبادرة",
       about: "عن الائتلاف",
       vision: "رؤيتنا وبرنامجنا",
       bylaws: "اللائحة التأسيسية",
@@ -885,6 +886,7 @@ function renderTranslations() {
 
   // Update navbar items
   document.querySelector('[data-nav-t="home"]').innerText = t.nav.home;
+  document.querySelector('[data-nav-t="charter"]').innerText = t.nav.charter;
   document.querySelector('[data-nav-t="about"]').innerText = t.nav.about;
   document.querySelector('[data-nav-t="vision"]').innerText = t.nav.vision;
   document.querySelector('[data-nav-t="bylaws"]').innerText = t.nav.bylaws;
@@ -1105,6 +1107,7 @@ function renderTranslations() {
   document.querySelector('[data-footer-link="offices"]').innerText = t.nav.offices;
   document.querySelector('[data-footer-link="join"]').innerText = t.nav.join;
   document.querySelector('[data-footer-link="news"]').innerText = t.nav.news;
+  document.querySelector('[data-footer-link="charter"]').innerText = t.nav.charter;
 
   autoTranslateNewArabicText().then(autoTranslateArabicAttributes);
 }
@@ -1244,7 +1247,7 @@ window.addEventListener('scroll', () => {
   }
 
   // Highlight navigation link corresponding to active section
-  const sections = ['home', 'about', 'vision', 'bylaws', 'leadership', 'offices', 'join', 'news', 'contact'];
+  const sections = ['home','charter' , 'about', 'vision', 'bylaws', 'leadership', 'offices', 'join', 'news', 'contact'];
   const scrollPosition = window.scrollY + 160;
 
   for (const s of sections) {
